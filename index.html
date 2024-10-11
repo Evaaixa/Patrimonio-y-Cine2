@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrimonio Fílmico</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Patrimonio Fílmico Mundial</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#acerca">Acerca de</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="inicio">
+            <h2>Bienvenidos</h2>
+            <p>Explora el maravilloso mundo del cine clásico y su impacto en la cultura mundial.</p>
+        </section>
+        <section id="acerca">
+            <h2>Acerca de</h2>
+            <p>El patrimonio fílmico incluye todas las películas y documentos relacionados con la historia del cine.</p>
+        </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form id="contactForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        
+        <h1>Películas Destacadas</h1>
+        <div id="peliculas-container" class="peliculas-container">
+            <!-- Las películas se cargarán aquí dinámicamente -->
+        </div>
+    
+        <script>
+            // Función para cargar las películas
+            function cargarPeliculas() {
+                fetch('obtener_peliculas.php')
+                    .then(response => response.json())
+                    .then(peliculas => {
+                        const container = document.getElementById('peliculas-container');
+                        peliculas.forEach(pelicula => {
+                            const peliculaElement = document.createElement('div');
+                            peliculaElement.className = 'pelicula';
+                            peliculaElement.innerHTML = `
+                                <img src="${pelicula.afiche}" alt="${pelicula.titulo}">
+                                <h2>${pelicula.titulo}</h2>
+                                <p>${pelicula.descripcion}</p>
+                                <a href="${pelicula.enlace}" target="_blank">Ver Película</a>
+                            `;
+                            container.appendChild(peliculaElement);
+                        });
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+    
+            // Cargar películas cuando la página esté lista
+            document.addEventListener('DOMContentLoaded', cargarPeliculas);
+        </script>
+
+
+
+
+
+    </main>
+    <footer>
+        <p>&copy; 2024 Patrimonio Fílmico Mundial</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
