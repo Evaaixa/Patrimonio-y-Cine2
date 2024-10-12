@@ -115,28 +115,27 @@
         }
     </script>
 <br><br>
-        <form id="registrationForm" action="procesos.php" method="POST">
-            <h3>Formulario de acceso</h3>
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="ciudad">Ciudad:</label>
-            <input type="text" id="ciudad" name="ciudad" required>
-            <label for="pais">País:</label>
-            <input type="text" id="pais" name="pais" required>
-            
-            <label for="role">Rol:</label>
-            <select id="role" name="role" required>
-                <option value="colaborador">Colaborador</option>
-                <option value="usuario">Usuario</option>
-            </select>
-            
-            <input type="submit" value="Enviar">
-        </form>
-        <section id="contacto">
-            <h3>Contacto</h3>
+    <section id="formularios">
+            <form id="registrationForm" action="procesos.php" method="POST">
+                <h3>Formulario de acceso</h3>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" id="ciudad" name="ciudad" required>
+                <label for="pais">País:</label>
+                <input type="text" id="pais" name="pais" required>            
+                <label for="role">Rol:</label>
+                <select id="role" name="role" required>
+                    <option value="colaborador">Colaborador</option>
+                    <option value="usuario">Usuario</option>
+                </select<>
+                <input type="submit" value="Enviar">
+            </form>
+        <br><br><br>
             <form id="contactForm">
+                <h3>Contacto</h3>
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
                 <label for="telefono">Teléfono:</label>

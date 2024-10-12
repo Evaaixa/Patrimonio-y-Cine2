@@ -65,23 +65,23 @@ nav ul li a {
     75% { transform: translateX(75%) translateY(20px);}
 }
 #search-container {
-    width: 300px;
+    width: 500px;
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 3px;
+    right: 3px;
 }
 #search-form {
     display: flex;
     flex-direction: column;
 }
   #search-input {
-    font-size: 14px;
+    font-size: 12px;
     padding: 7px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 } 
   #search-form button {
     padding: 5px;
-    font-size: 14px;
+    font-size: 12px;
     background-color: #704214;
     color: white;
     border: none;
@@ -190,7 +190,6 @@ section {
     width: 560px;
     height: 315px;
     border: 10px solid transparent;
-    background-image: url(../img/cuadro.jpg) center center no-repeat;
     background-size: cover;
 }
 
@@ -210,7 +209,6 @@ section {
     gap: 35px;
     margin-bottom: 5px;
 } 
-
 .noticia h2 {
     font-size: 24px;
     color: #333;
@@ -226,46 +224,98 @@ section {
 .noticia a:hover {
     text-decoration: underline;
 }
-.contenedor {
+#formularios {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 20px;
-    margin: 5px;
-    width: 30%;
+    gap: 30px;
 }
-form, #contacto {
-    flex: 1;
+form {
     background-color: #d2b48c;
-    padding: 20px;
-    min-width: 45%;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+}
+label {
+    display: block;
+    margin-bottom: 3px;
+    color: white;
+    font-size: 0.9em;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 0.9em;
+}
+input[type="submit"],
+button[type="submit"] {
+    background-color: #704214;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    align-self: center;
+    width: 60%;
+    margin-top: 10px;
+}
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+    background-color: #04d23e;
+}
+textarea {
+    height: 80px;
+    resize: vertical;
 }
 
-@media (max-width: 600px) {
-    .contenedor {
+/* Estilos responsive */
+@media screen and (max-width: 768px) {
+    #formularios {
         flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
-    form, #contacto {
-        min-width: 100%;
+    form {
+        width: 90%;
+        max-width: 300px;
+    }
+    input[type="submit"],
+    button[type="submit"]{
+        width: 80%;
     }
 }
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-input[type="submit"] {
-    background-color: #9f6233;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-input[type="submit"]:hover {
-    background-color: #8eaf8f;
-}
+
+
+
+
+
+
+
+
+
+
+
 
 footer {
     background: linear-gradient(to right, #8b4513, #f4a460); /* Degradado marrón a dorado */
