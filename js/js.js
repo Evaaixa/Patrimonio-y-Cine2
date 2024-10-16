@@ -1,3 +1,7 @@
+
+
+
+
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
