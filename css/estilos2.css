@@ -36,6 +36,19 @@ body {
     text-align: center;
     font-family: cinzel, serif;
 }
+#gif_imag {
+    width: 20px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulseGif 2s ease-in-out infinite;
+}
+@keyframes moveGif {
+    0%, 100% {transform: translate(-50%, -50%) scale(1);}
+    50% {transform: translate(-50%, -50%) scale(1.1);}
+}
 .title {
     font-size: 7em;
     color: white;
@@ -110,7 +123,7 @@ nav ul li a {
     margin-bottom: 10px;
   }
   .social-icons a {
-    color: #ddbf9a;
+    color: #faf6f1;
     font-size: 24px;
   }
 
