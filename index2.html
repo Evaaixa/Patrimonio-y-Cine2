@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patrimonio Fílmico</title>
     <link rel="stylesheet" href="css/estilos2.css">
-    <link rel="icon" type="image/x-icon" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
@@ -41,8 +40,7 @@
                     <li><a href="https://www.linkedin.com/company/tupagina" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
                 </ul>
             </div>
-            <!-- <section class="share-section"><h4>Compartir</h4><ul class="share-links"><li><a rel="nofollow" href="https://twitter.com/intent/tweet?text=Cine&amp;url=https://concepto.de/cine/" title="Compartir vía Twitter" class="box-share"><span class="icon icon-twitter"></span></a></li><li><a rel="nofollow" href="https://www.facebook.com/sharer.php?href=https://concepto.de/cine/&amp;t=Cine" title="Compartir vía facebook" class="box-share"><span class="icon icon-facebook"></span></a></li><li><a href="mailto:?subject=Cine&amp;body=https://concepto.de/cine/" title="Compartir vía email" class="box-share"><span class="icon icon-email"></span></a></li><li><a rel="nofollow" href="https://classroom.google.com/share?url=https://concepto.de/cine/" title="Compartir vía google classroom" class="box-share"><span class="icon icon-google-classroom"></span></a></li><li><a rel="nofollow" href="https://wa.me/?text=Cine%20https://concepto.de/cine/" title="Compartir vía Whatsapp" data-action="share/whatsapp/share" class="box-share"><span class="icon icon-whatsapp"></span></a></li><li><a href="https://concepto.de/cine/" title="Copiar Link" class="copy-link" data-message="Link copiado"><span class="icon icon-link"></span></a></li></ul></section> -->
-
+            
             <div id="search-container">
                 <form id="search-form">
                     <input type="text" id="search-input" placeholder="Buscar...">
@@ -83,43 +81,61 @@
             <div id="descripcion3" class="descripcion"></div>
             <div id="descripcion4" class="descripcion"></div>
         </section>
-    
-    <div class="noticias">
-        <h2>Noticias</h2>
-        <div class="noticia">
-            Wim Wenders recibe el premio FIAF 2024 en el Maratón de Cine Clásico de Budapest
-            <p>La FIAF entregó su Premio FIAF 2024 al aclamado cineasta alemán Wim Wenders durante una ceremonia especial en Budapest, Hungría, como parte de la 7ª edición del Maratón de Cine Clásico de Budapest. <a href="https://www.fiafnet.org/pages/Events/wim-wenders-2024-fiaf-award.html" target="_blank">Leer más</a></p>
-        </div>
-        <div class="noticia">
-            Día Mundial del Patrimonio Audiovisual 2024
-            <p>Cada 27 de octubre, los archivos audiovisuales de todo el mundo conmemoran el Día Mundial del Patrimonio Audiovisual para celebrar la labor de los archivos y, concienciar sobre la importancia y la urgencia de proteger los materiales audiovisuales que se perderán si no se lleva a cabo una conservación adecuada.<a href="https://www.ccaaa.org/WDAVH2024" target="_blank">Leer más</a></p>
-        </div>
-                <!-- Añade más noticias aquí -->
-    </div>
-  
-    <div id="contenedor-enlaces">      
-        <h3>Patrimonio Cultural</h3>
-            <p>El cine es una forma de transmisión de la cultura universal de todos los tiempos. Nuestra sociedad se va formando e informando a través del cine y las películas, reportajes o documentales, que permiten otro tipo de acercamiento.</p>
-        <ul>
-            <li>
-                <p><a href="https://archive.org/details/moviesandfilms" target="Archive.org">Internet Archive</a> es el sitio ideal para disfrutar de 5000 películas de dominio público de forma totalmente gratuita (y legal, no lo olvides).</p>
-            </li>
-            <li> 
-                <p><a href="https://classiccinemaonline.com/" target="Classic Cinema">Cine Clásico:</a> las joyas del cine en blanco y negro y los grandes clásicos del Séptimo Arte, se pueden encontrar una buena parte de estas películas.</p>
-            </li>
-        </ul>
-    </div>
         
-    <script>
-        function cargarPeliculas(){
-            fetch('obtener-peliculas.php')
-                .then(response => response.json())
-                .then(peliculas => {
-                    const container = document.getElementById('peliculas-container');
+        <div class="noticias">
+            <h2>Noticias</h2>
+            <div class="noticia">
+                Wim Wenders recibe el premio FIAF 2024 en el Maratón de Cine Clásico de Budapest
+                <p>La FIAF entregó su Premio FIAF 2024 al aclamado cineasta alemán Wim Wenders durante una ceremonia especial en Budapest, Hungría, como parte de la 7ª edición del Maratón de Cine Clásico de Budapest. <a href="https://www.fiafnet.org/pages/Events/wim-wenders-2024-fiaf-award.html" target="_blank">Leer más</a></p>
+            </div>
+            <div class="noticia">
+                Día Mundial del Patrimonio Audiovisual 2024
+                <p>Cada 27 de octubre, los archivos audiovisuales de todo el mundo conmemoran el Día Mundial del Patrimonio Audiovisual para celebrar la labor de los archivos y, concienciar sobre la importancia y la urgencia de proteger los materiales audiovisuales que se perderán si no se lleva a cabo una conservación adecuada.<a href="https://www.ccaaa.org/WDAVH2024" target="_blank">Leer más</a></p>
+            </div>
+            <!-- Añade más noticias aquí -->
+        </div>
+        
+        <div id="contenedor-enlaces">      
+            <h3>Patrimonio Cultural</h3>
+            <p>El cine es una forma de transmisión de la cultura universal de todos los tiempos. Nuestra sociedad se va formando e informando a través del cine y las películas, reportajes o documentales, que permiten otro tipo de acercamiento.</p>
+            <ul>
+                <li>
+                    <p><a href="https://archive.org/details/moviesandfilms" target="Archive.org">Internet Archive</a> es el sitio ideal para disfrutar de 5000 películas de dominio público de forma totalmente gratuita (y legal, no lo olvides).</p>
+                </li>
+                <li> 
+                    <p><a href="https://classiccinemaonline.com/" target="Classic Cinema">Cine Clásico:</a> las joyas del cine en blanco y negro y los grandes clásicos del Séptimo Arte, se pueden encontrar una buena parte de estas películas.</p>
+                </li>
+            </ul>
+        </div>
+    
+        <div id="map"></div>
+    
+        <div class="peliculas">
+            <div class="movie-selector">
+                <select id="movieSelect" onchange="cargarPelicula()">
+                    <option value="">Selecciona una película</option>
+                    <option value="pelicula1.webm">Película 1</option>
+                    <option value="pelicula2.webm">Película 2</option>
+                    <option value="pelicula3.webm">Película 3</option>
+                    <!-- Agrega más opciones según necesites -->
+                </select>
+            </div>
+    
+            <div class="video-container">
+                <video id="videoPlayer" controls>
+                    <source src="" type="video/webm">
+                    Tu navegador no soporta el elemento video.
+                </video>
+            </div>
+    
+            <div class="movie-info">
+                <h2 class="movie-title" id="movieTitle">Selecciona una película</h2>
+                <p class="movie-description" id="movieDescription">
+                    La descripción de la película aparecerá aquí cuando selecciones una película.
+                </p>
+            </div>
+        </div>
 
-                })
-        }
-    </script>
 <br><br>
     <section id="formularios">
             <form id="registrationForm" action="procesos.php" method="POST">
@@ -155,8 +171,25 @@
         </section>
     </main>
     <footer>
+    <section class="share-section">
+        <!-- <h4>Compartir</h4>
+        <ul class="share-links">
+            <li><a rel="nofollow" href=".." title="Compartir vía Twitter" class="box-share"><span class="icon icon-twitter"></span></a></li>
+            <li><a rel="nofollow" href="" title="Compartir vía facebook" class="box-share"><span class="icon icon-facebook"></span></a></li>
+            <li><a href="mailto:?subject=Cine&amp;body=https://concepto.de/cine/" title="Compartir vía email" class="box-share"><span class="icon icon-email"></span></a></li>
+            <li><a rel="nofollow" href="https://classroom.google.com/share?url=https://concepto.de/cine/" title="Compartir vía google classroom" class="box-share"><span class="icon icon-google-classroom"></span></a></li>
+            <li><a rel="nofollow" href="https://wa.me/?text=Cine%20https://concepto.de/cine/" title="Compartir vía Whatsapp" data-action="share/whatsapp/share" class="box-share"><span class="icon icon-whatsapp"></span></a></li>
+            <li><a href="https://concepto.de/cine/" title="Copiar Link" class="copy-link" data-message="Link copiado"><span class="icon icon-link"></span></a></li>
+        </ul> -->
+    </section>
+    
+    
         <p>&copy; Cine y Patrimonio EA</p>
     </footer>
-    <script src="js/js.js"></script>
+    <script> 
+        src="js/js.js"
+        src="js/map.js"
+        src="https://unpkg.com/leaflet/dist/leaflet.js"
+    </script>
 </body>
 </html>

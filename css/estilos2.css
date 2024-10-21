@@ -170,6 +170,84 @@ main::before {
 section {
     margin-bottom: 2rem;
 }
+#map {
+    height: 300px;
+    width: 100%;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.movie-selector {
+    margin-bottom: 30px;
+    background-color: #704214;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d49138;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255,255,255,0.3);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    background-color: #d2b48c;
+    border-radius: 10px;
+}
+
+.video-container video {
+    position: absolute;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.movie-info {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #704214;
+    border-radius: 10px;
+}
+
+.movie-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.movie-description {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .peliculas {
+        padding: 10px;
+    }
+
+    .movie-title {
+        font-size: 20px;
+    }
+}
 .gallery-container {
     display: flex;
     flex-wrap: wrap;

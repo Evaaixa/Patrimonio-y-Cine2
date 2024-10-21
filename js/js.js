@@ -1,4 +1,67 @@
 
+        // Objeto con información de las películas
+        const peliculas = {
+          'A_Is_for_Atom.webm': {
+              titulo: 'A es de Atomo',
+              descripcion: 'Descripción de la película 1...',
+              duracion: '14:42',
+              fecha: '1953',
+              genero: '..'
+          },
+          'pelicula2.webm': {
+              titulo: 'Película 2',
+              descripcion: 'Descripción de la película 2...',
+              duracion: '1h 55min',
+              genero: 'Comedia'
+          },
+          'pelicula3.webm': {
+              titulo: 'Película 3',
+              descripcion: 'Descripción de la película 3...',
+              duracion: '2h 30min',
+              genero: 'Drama'
+          }
+      };
+
+      function cargarPelicula() {
+          const select = document.getElementById('movieSelect');
+          const video = document.getElementById('videoPlayer');
+          const titulo = document.getElementById('movieTitle');
+          const descripcion = document.getElementById('movieDescription');
+          
+          if (select.value) {
+              // Actualiza la fuente del video
+              video.querySelector('source').src = 'ruta/a/tus/videos/' + select.value;
+              video.load(); // Recarga el video con la nueva fuente
+              
+              // Actualiza la información de la película
+              const pelicula = peliculas[select.value];
+              titulo.textContent = pelicula.titulo;
+              descripcion.textContent = `${pelicula.descripcion}\nDuración: ${pelicula.duracion} | Género: ${pelicula.genero}`;
+          } else {
+              // Resetea el reproductor si no hay selección
+              video.querySelector('source').src = '';
+              video.load();
+              titulo.textContent = 'Selecciona una película';
+              descripcion.textContent = 'La descripción de la película aparecerá aquí cuando selecciones una película.';
+          }
+      }
+
+      // Función para cargar películas desde una API o base de datos
+      async function cargarCatalogo() {
+          try {
+              // Aquí podrías hacer una llamada a tu API
+              // const response = await fetch('tu-api/peliculas');
+              // const data = await response.json();
+              // Actualizar el select con los datos recibidos
+          } catch (error) {
+              console.error('Error al cargar el catálogo:', error);
+          }
+      }
+
+      // Cargar el catálogo al iniciar la página
+      // cargarCatalogo();
+
+
 
 
 
