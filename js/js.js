@@ -1,69 +1,61 @@
 
-        // Objeto con información de las películas
-        const peliculas = {
-          'A_Is_for_Atom.webm': {
-              titulo: 'A es de Atomo',
-              descripcion: 'Descripción de la película 1...',
-              duracion: '14:42',
-              fecha: '1953',
-              genero: '..'
-          },
-          'pelicula2.webm': {
-              titulo: 'Película 2',
-              descripcion: 'Descripción de la película 2...',
-              duracion: '1h 55min',
-              genero: 'Comedia'
-          },
-          'pelicula3.webm': {
-              titulo: 'Película 3',
-              descripcion: 'Descripción de la película 3...',
-              duracion: '2h 30min',
-              genero: 'Drama'
-          }
-      };
+// Datos de las películas
+const movies = [
+    {
+        id: 1,
+        title: "I Wanna Be a Sailor",
+        src: "pelicula1.webm",
+        thumbnail: "/api/placeholder/200/300", // Reemplaza con la ruta a tu imagen
+        description: "Descripción de la película 1"
+    },
+    {
+        id: 2,
+        title: "Película 2",
+        src: "pelicula2.webm",
+        thumbnail: "/api/placeholder/200/300", // Reemplaza con la ruta a tu imagen
+        description: "Descripción de la película 2"
+    },
+    {
+        id: 3,
+        title: "Película 3",
+        src: "pelicula3.webm",
+        thumbnail: "/api/placeholder/200/300", // Reemplaza con la ruta a tu imagen
+        description: "Descripción de la película 3"
+    }
+];
 
-      function cargarPelicula() {
-          const select = document.getElementById('movieSelect');
-          const video = document.getElementById('videoPlayer');
-          const titulo = document.getElementById('movieTitle');
-          const descripcion = document.getElementById('movieDescription');
-          
-          if (select.value) {
-              // Actualiza la fuente del video
-              video.querySelector('source').src = 'ruta/a/tus/videos/' + select.value;
-              video.load(); // Recarga el video con la nueva fuente
-              
-              // Actualiza la información de la película
-              const pelicula = peliculas[select.value];
-              titulo.textContent = pelicula.titulo;
-              descripcion.textContent = `${pelicula.descripcion}\nDuración: ${pelicula.duracion} | Género: ${pelicula.genero}`;
-          } else {
-              // Resetea el reproductor si no hay selección
-              video.querySelector('source').src = '';
-              video.load();
-              titulo.textContent = 'Selecciona una película';
-              descripcion.textContent = 'La descripción de la película aparecerá aquí cuando selecciones una película.';
-          }
-      }
+// Generar miniaturas
+function generateThumbnails() {
+    const movieGrid = document.getElementById('movieGrid');
+    
+    movies.forEach(movie => {
+        const thumbnail = document.createElement('div');
+        thumbnail.className = 'movie-thumbnail';
+        thumbnail.innerHTML = `
+            <img src="${movie.thumbnail}" alt="${movie.title}">
+            <div class="movie-thumbnail-title">${movie.title}</div>
+        `;
+        
+        thumbnail.addEventListener('click', () => cargarPelicula(movie));
+        movieGrid.appendChild(thumbnail);
+    });
+}
 
-      // Función para cargar películas desde una API o base de datos
-      async function cargarCatalogo() {
-          try {
-              // Aquí podrías hacer una llamada a tu API
-              // const response = await fetch('tu-api/peliculas');
-              // const data = await response.json();
-              // Actualizar el select con los datos recibidos
-          } catch (error) {
-              console.error('Error al cargar el catálogo:', error);
-          }
-      }
+// Cargar película seleccionada
+function cargarPelicula(movie) {
+    const videoPlayer = document.getElementById('videoPlayer');
+    const videoContainer = document.getElementById('videoContainer');
+    const movieTitle = document.getElementById('movieTitle');
+    const movieDescription = document.getElementById('movieDescription');
 
-      // Cargar el catálogo al iniciar la página
-      // cargarCatalogo();
+    videoPlayer.src = movie.src;
+    videoContainer.classList.add('active');
+    movieTitle.textContent = movie.title;
+    movieDescription.textContent = movie.description;
 
-
-
-
+    // Hacer scroll suave hasta el video
+    videoContainer.scrollIntoView({ behavior: 'smooth' });
+}
 
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
     var name = document.getElementById('name').value;

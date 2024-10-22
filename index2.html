@@ -111,14 +111,33 @@
         <div id="map"></div>
     
         <div class="peliculas">
+            <div class="movie-grid" id="movieGrid">
+                <!-- Las miniaturas se generarán aquí -->
+            </div>
+    
+            <div class="video-container" id="videoContainer">
+                <video id="videoPlayer" controls>
+                    <source src="" type="video/webm">
+                    Tu navegador no soporta el elemento video.
+                </video>
+            </div>
+    
+            <div class="movie-info">
+                <h2 class="movie-title" id="movieTitle">Selecciona una película</h2>
+                <p class="movie-description" id="movieDescription">
+                    La descripción de la película aparecerá aquí cuando selecciones una película.
+                </p>
+            </div>
+        </div>
+        <!-- <div class="peliculas">
             <div class="movie-selector">
                 <select id="movieSelect" onchange="cargarPelicula()">
                     <option value="">Selecciona una película</option>
                     <option value="pelicula1.webm">Película 1</option>
                     <option value="pelicula2.webm">Película 2</option>
                     <option value="pelicula3.webm">Película 3</option>
-                    <!-- Agrega más opciones según necesites -->
-                </select>
+                    Agrega más opciones según necesites -->
+                <!-- </select>
             </div>
     
             <div class="video-container">
@@ -134,7 +153,7 @@
                     La descripción de la película aparecerá aquí cuando selecciones una película.
                 </p>
             </div>
-        </div>
+        </div> --> 
 
 <br><br>
     <section id="formularios">
