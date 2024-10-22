@@ -4,7 +4,7 @@ const movies = [
     {
         id: 1,
         title: "I Wanna Be a Sailor",
-        src: "pelicula1.webm",
+        src: "",
         thumbnail: "/api/placeholder/200/300", // Reemplaza con la ruta a tu imagen
         description: "Descripción de la película 1"
     },
@@ -92,3 +92,35 @@ document.getElementById('search-form').addEventListener('submit', function(event
       }
     });
   });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const chaplin = document.getElementById('chaplin');
+    const speechBubble = document.getElementById('speech-bubble');
+    const speechText = document.getElementById('speech-text');
+
+    let voices = [];
+
+    function getVoices() {
+        voices = speechSynthesis.getVoices();
+        console.log(voices);
+    }
+
+    speechSynthesis.onvoiceschanged = getVoices;
+    getVoices();
+
+    chaplin.addEventListener('click', () => {
+        speechBubble.style.display = 'block';
+        speakText(speechText.textContent);
+    });
+
+    function speakText(text) {
+        if ('speechSynthesis' in window) {
+            const speech = new SpeechSynthesisUtterance(text);
+            speech.lang = 'es-ES';
+            speech.voice = voices.find(voice => voice.name === 'Google español'); // Ajusta el nombre de la voz aquí
+            window.speechSynthesis.speak(speech);
+        } else {
+            alert('Lo siento, tu navegador no soporta la síntesis de voz.');
+        }
+    }
+});
