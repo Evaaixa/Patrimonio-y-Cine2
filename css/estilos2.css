@@ -77,6 +77,27 @@ nav ul li a {
     50% { transform: translateX(50%) translateY(0);}
     75% { transform: translateX(75%) translateY(20px);}
 }
+.titulo-3d {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #ffd700;
+    text-shadow: 
+        1px 1px 0 #daa520,
+        2px 2px 0 #b8860b,
+        3px 3px 0 #996515,
+        4px 4px 0 #8b7355,
+        5px 5px 0 #704214,
+        6px 6px 10 rgba(0, 0, 0, 0.4);
+    background: linear-gradient(
+        to bottom,
+        #ffd700 0%,
+        #daa520 50%,
+        #b8860b 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
 #search-container {
     width: 500px;
     position: absolute;
@@ -126,6 +147,62 @@ nav ul li a {
     color: #faf6f1;
     font-size: 24px;
   }
+
+  .acordeon {
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+.acordeon-item {
+    margin-bottom: 5px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #704214;
+}
+
+.acordeon-header {
+    background: #8b4513;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.acordeon-header:hover {
+    background: #996515;
+}
+
+.acordeon-header::after {
+    content: '+';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.acordeon-contenido {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: #fff;
+}
+
+/* Estilo para el contenido interno */
+.acordeon-contenido-interno {
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Clase para cuando está activo */
+.acordeon-item.activo .acordeon-header::after {
+    content: '-';
+}
+
+.acordeon-item.activo .acordeon-contenido {
+    max-height: 1000px; /* Altura máxima cuando está desplegado */
+}
 
 h2 {
     text-align: center;

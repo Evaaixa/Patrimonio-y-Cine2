@@ -41,6 +41,25 @@ function generateThumbnails() {
     });
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Todo tu código JavaScript aquí
+    document.querySelectorAll('.acordeon-header').forEach(button => {
+        button.addEventListener('click', () => {
+            const acordeonItem = button.parentElement;
+            
+            // Cierra todos los demás items
+            document.querySelectorAll('.acordeon-item').forEach(item => {
+                if (item !== acordeonItem) {
+                    item.classList.remove('activo');
+                }
+            });
+            
+            // Toggle del item actual
+            acordeonItem.classList.toggle('activo');
+        });
+    });
+});
+
 // Cargar película seleccionada
 function cargarPelicula(movie) {
     const videoPlayer = document.getElementById('videoPlayer');
