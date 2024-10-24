@@ -94,3 +94,87 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 })
+
+// inicializar los carruseles
+const carousels = {};
+const autoplayIntervals = {};
+const AUTOPLAY_DELAY = 3000; // 3 segundos entre cada transición
+
+// Inicializar los carruseles
+function initCarousels() {
+    ['carousel-left', 'carousel-center', 'carousel-right'].forEach(id => {
+        const container = document.getElementById(id);
+        carousels[id] = {
+            currentSlide: 0,
+            totalSlides: container.children.length,
+            isPlaying: false
+        };
+        startAutoplay(id); // Iniciar autoplay automáticamente
+    });
+}
+
+// Mover las diapositivas con transición circular
+function moveSlide(carouselId, direction) {
+    const carousel = carousels[carouselId];
+    const container = document.getElementById(carouselId);
+    
+    carousel.currentSlide = (carousel.currentSlide + direction + carousel.totalSlides) % carousel.totalSlides;
+    
+    // Aplicar la transición
+    container.style.transform = `translateX(-${carousel.currentSlide * 100}%)`;
+}
+
+// Iniciar autoplay
+function startAutoplay(carouselId) {
+    if (!carousels[carouselId].isPlaying) {
+        carousels[carouselId].isPlaying = true;
+        updateAutoplayButton(carouselId);
+        autoplayIntervals[carouselId] = setInterval(() => {
+            moveSlide(carouselId, 1);
+        }, AUTOPLAY_DELAY);
+    }
+}
+
+// Detener autoplay
+function stopAutoplay(carouselId) {
+    if (carousels[carouselId].isPlaying) {
+        carousels[carouselId].isPlaying = false;
+        updateAutoplayButton(carouselId);
+        clearInterval(autoplayIntervals[carouselId]);
+    }
+}
+
+// Alternar autoplay
+function toggleAutoplay(carouselId) {
+    if (carousels[carouselId].isPlaying) {
+        stopAutoplay(carouselId);
+    } else {
+        startAutoplay(carouselId);
+    }
+}
+
+// Actualizar el botón de autoplay
+function updateAutoplayButton(carouselId) {
+    const carousel = document.getElementById(carouselId).parentElement;
+    const playIcon = carousel.querySelector('.play-icon');
+    const pauseIcon = carousel.querySelector('.pause-icon');
+    
+    if (carousels[carouselId].isPlaying) {
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'inline';
+    } else {
+        playIcon.style.display = 'inline';
+        pauseIcon.style.display = 'none';
+    }
+}
+
+// Pausar autoplay cuando el usuario interactúa con los botones de navegación
+document.querySelectorAll('.carousel-button').forEach(button => {
+    button.addEventListener('mouseenter', () => {
+        const carouselId = button.closest('.carousel').querySelector('.carousel-container').id;
+        stopAutoplay(carouselId);
+    });
+});
+
+// Inicializar cuando el documento esté listo
+document.addEventListener('DOMContentLoaded', initCarousels); 

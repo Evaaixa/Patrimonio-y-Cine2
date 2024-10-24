@@ -37,7 +37,7 @@
                 <h1 class="titulo-3d">Bienvenidos</h1>
                 <img id="chaplin" src="img/Chapli_2.jpg" alt="Chaplin">
                 <div id="speech-bubble">
-                    <p id="speech-text">¡¡¡Bienvenidos a nuestra página del Cine como Patrimonio!!!</p>
+                    <p id="speech-text">¡¡¡Bienvenidos al Cine como Patrimonio!!!</p>
               </div>
             </div>
         </section>
@@ -103,20 +103,79 @@
         </div>
     </section>
 
-    <section id="galeria">
-        <h2>Galería de Imágenes</h2>
-        <div class="gallery-container">
-            <div class="gallery">
-                <img src="img/Chaplin_1.jpg" alt="Chaplin 1" class="gallery-item">
-                <img src="img/Chaplin_3.jpg" alt="Chaplin 2" class="gallery-item">
-                <img src="img/Chaplin_4.jpg" alt="Chaplin 3" class="gallery-item">
-                <img src="img/Chaplin_5.jpg" alt="Chaplin 4" class="gallery-item">
-                <img src="img/Chaplin_6.jpg" alt="Chaplin 4" class="gallery-item">
-                <img src="img/Chaplin_7.jpg" alt="Chaplin 4" class="gallery-item">
-                <img src="img/Chaplin_8.jpg" alt="Chaplin 4" class="gallery-item">
-                <!-- Añade más imágenes según sea necesario -->
+    <div class="galleries-container">
+        <div class="gallery gallery-left"> 
+            <h3>Galería Izquierda</h3>
+            <div class="carousel">
+                <div class="carousel-container" id="carousel-left">
+                    <div class="carousel-slide">
+                        <img src="img/Chaplin_1.jpg" alt="Imagen 1"></div>
+                    <div class="carousel-slide">
+                        <img src="img/Chaplin_3.jpg" alt="Imagen 2"></div>
+                    <div class="carousel-slide">
+                        <img src="img/Chaplin_4.jpg" alt="Imagen 3"></div>
+                    <div class="carousel-slide">
+                        <img src="img/Chaplin_5.jpg" alt="Imagen 3"></div>
+                    <div class="carousel-slide">
+                        <img src="img/Chaplin_6.jpg" alt="Imagen 3"></div>
+                </div>
+                <button class="carousel-button prev" onclick="moveSlide('carousel-left', -1)">&#10094;</button>
+                <button class="carousel-button next" onclick="moveSlide('carousel-left', 1)">&#10095;</button>
+                <button class="autoplay-button" onclick="toggleAutoplay('carousel-left')">
+                    <span class="play-icon">▶</span>
+                    <span class="pause-icon" style="display: none;">⏸</span>
+                </button>
             </div>
         </div>
+    
+        <div class="gallery gallery-center">
+            <h3>Chaplin, siempre Chaplin</h3>
+            <div class="carousel">
+                <div class="carousel-container" id="carousel-center">
+                    <div class="carousel-slide">
+                        <img src="img/Chaplin_1.jpg" alt="Imagen 1"></div>
+                    <div class="carousel-slide">
+                        <img src="img/Chaplin_3.jpg" alt="Imagen 2"></div>
+                    <div class="carousel-slide">
+                        <img src="img/Chaplin_4.jpg" alt="Imagen 3"></div>
+                    <div class="carousel-slide">
+                        <img src="img/Chaplin_5.jpg" alt="Imagen 3"></div>
+                    <div class="carousel-slide">
+                        <img src="img/Chaplin_6.jpg" alt="Imagen 3"></div>
+                </div>
+                <button class="carousel-button prev" onclick="moveSlide('carousel-center', -1)">&#10094;</button>
+                <button class="carousel-button next" onclick="moveSlide('carousel-center', 1)">&#10095;</button>
+                <button class="autoplay-button" onclick="toggleAutoplay('carousel-center')">
+                    <span class="play-icon">▶</span>
+                    <span class="pause-icon" style="display: none;">⏸</span>
+                </button>
+            </div>
+        </div>
+    
+        <div class="gallery gallery-right">
+            <h3>Galería Derecha</h3>
+            <div class="carousel">
+                <div class="carousel-container" id="carousel-right">
+                    <div class="carousel-slide">
+                        <img src="img/Chaplin_1.jpg" alt="Imagen 1"></div>
+                    <div class="carousel-slide">
+                        <img src="img/Chaplin_3.jpg" alt="Imagen 2"></div>
+                    <div class="carousel-slide">
+                        <img src="img/Chaplin_4.jpg" alt="Imagen 3"></div>
+                    <div class="carousel-slide">
+                        <img src="img/Chaplin_5.jpg" alt="Imagen 3"></div>
+                    <div class="carousel-slide">
+                        <img src="img/Chaplin_6.jpg" alt="Imagen 3"></div>
+                </div>
+                <button class="carousel-button prev" onclick="moveSlide('carousel-right', -1)">&#10094;</button>
+                <button class="carousel-button next" onclick="moveSlide('carousel-right', 1)">&#10095;</button>
+                <button class="autoplay-button" onclick="toggleAutoplay('carousel-right')">
+                    <span class="play-icon">▶</span>
+                    <span class="pause-icon" style="display: none;">⏸</span>
+                </button>
+            </div>
+        </div>
+    </div>
 <br>
         <div class="noticias">
             <h2>Noticias</h2>
