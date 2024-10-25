@@ -180,8 +180,8 @@ h2, h3 {
 /* estilos para el contenedor de desplegables */
 .acordeon {
     max-width: 800px;
-    margin: 20px auto;
-    font-family: Arial, sans-serif;
+    margin: 10px auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .acordeon-item {
     margin-bottom: 5px;
