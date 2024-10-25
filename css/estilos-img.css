@@ -1,0 +1,33 @@
+
+.marco-pelicula {
+    border: 10px solid #6d4c41; /* Color marrón */
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f4e7d3; /* Fondo color ocre */
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+}
+
+.marco-pelicula::before,
+.marco-pelicula::after {
+    content: '';
+    position: absolute;
+    color: #6d4c41; /* Color marrón */
+    font-weight: bold;
+    background-color: #f4e7d3; /* Fondo color ocre */
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.marco-pelicula::before {
+    content: '24'; /* Número de cuadro */
+    top: -20px;
+    left: 10px;
+}
+
+.marco-pelicula::after {
+    content: 'KODAK SAFETY FILM'; /* Texto de Kodak */
+    bottom: -20px;
+    right: 10px;
+}
